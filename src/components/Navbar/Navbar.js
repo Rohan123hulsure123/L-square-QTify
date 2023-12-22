@@ -5,10 +5,10 @@ import SearchBar from '../SearchBar/SearchBar'
 
 export default function Navbar() {
   return (
-    <div>
+    <div className='navbar'>
+        <img src="./Group 1.png" alt='logo' className='logo'/>
         <SearchBar />
-        <br/>
-        <FeedBackButton />
+        <FeedBackButton text={"Give Feedback"}/>
     </div>
   )
 }

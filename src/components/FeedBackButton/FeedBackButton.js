@@ -1,7 +1,7 @@
 import React from 'react'
 import "./FeedBackButton.css"
-export default function FeedBackButton() {
+export default function FeedBackButton({text}) {
   return (
-    <button className='feedback-button'>Give Feedback</button>
+    <button className='feedback-button'>{text}</button>
   )
 }

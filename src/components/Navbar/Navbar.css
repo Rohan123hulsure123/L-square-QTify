@@ -1,0 +1,16 @@
+.navbar {
+  height: 74px;
+  position: relative;
+  background: #34c94b;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.logo {
+    position: absolute;
+  width: 67px;
+  height: 34px;
+  top: 20px;
+  left: 32px;
+}
