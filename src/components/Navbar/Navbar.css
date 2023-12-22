@@ -5,15 +5,15 @@
   background: #34c94b;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
 }
 
 .logo {
-    position: relative;
+    position: absolute;
   width: 67px;
   height: 34px;
   /* top: 20px;*/
   /* left: 32px;  */
-  margin-left: 32px;
+  margin-left: 10px;
 }
