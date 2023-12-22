@@ -1,6 +1,6 @@
 .search-bar {
-  position: absolute;
-  width: 568px;
+  position: relative;
+  /* width: 568px; */
   height: 74px;
   top: 13px;
   /* height: 48px; */
