@@ -39,3 +39,8 @@
   border-left: 1px solid #121212;
   top: 0;
 }
+
+.search-icon:hover {
+    cursor: pointer;
+  }
+  
