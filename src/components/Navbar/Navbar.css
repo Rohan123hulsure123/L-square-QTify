@@ -5,11 +5,11 @@
   background: #34c94b;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
 }
 
-.logo {
+.navbarContainer img {
     position: absolute;
   width: 67px;
   height: 54px;
