@@ -1,0 +1,16 @@
+.hero-section {
+  height: 270px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-section h1 {
+  color: white;
+  text-align: center;
+}
+
+.hero-section img {
+  width: 212px;
+  height: 212px;
+}
