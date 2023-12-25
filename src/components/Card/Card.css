@@ -1,0 +1,54 @@
+.card-wrapper {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.album-image-and-chip {
+  width: 159px;
+  height: 205px;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: white;
+}
+
+.album-image {
+  width: 159px;
+  height: 170px;
+  overflow: hidden;
+}
+
+.album-image img {
+  width: 159px;
+  height: 170px;
+  overflow: hidden;
+  /* border-radius: 10px; */
+}
+
+.album-follows {
+  height: 35px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 6px;
+}
+
+.album-follows :only-child {
+  color: white;
+  background-color: black;
+  overflow: hidden;
+  padding: 4px, 8px, 4px, 8px;
+}
+
+.album-name {
+  width: 105px;
+  height: 21px;
+  margin-top: 6px;
+  color: white;
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: 0px;
+  text-align: left;
+}

@@ -1,0 +1,32 @@
+.section-wrapper {
+    padding: 0 5% 5% 5%;
+}
+
+.section-title-and-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.section-heading{
+    font-size: 20px;
+    color: white;
+}
+
+.section-button {
+    color : #34c94b;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.section-cards-grid{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-evenly; */
+    column-gap: 40px;
+    row-gap: 10px;
+    flex-wrap: wrap;
+}
+
