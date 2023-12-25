@@ -24,7 +24,7 @@ export default function Card({id, title, description, follow_count, image, slug,
                 <img src={image} alt="Album img" loading='lazy'/>
             </div>
             <div className='album-follows'>
-                <Chip label={follow_count} size='small'/>
+                <Chip label={follow_count +" Follows"} size='small'/>
             </div>
         </div>
         <div className='album-name'>

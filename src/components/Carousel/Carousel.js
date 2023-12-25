@@ -1,6 +1,6 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { Navigation } from "swiper";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -26,7 +26,7 @@ export default function Carousel({ albums }) {
   return (
     <div className="carousel">
       <Swiper
-        
+        // initialSlide={3}
         modules={[Navigation]}
         spaceBetween={40}
         slidesPerView={7}
