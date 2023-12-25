@@ -2,7 +2,7 @@ import '@fontsource/poppins';
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import HeroSection from './components/HeroSection/HeroSection';
-import Card from './components/Card/Card';
+
 import Section from './components/Section/Section';
 
 
@@ -12,7 +12,8 @@ function App() {
     <div className="App">
       <Navbar />
       <HeroSection />
-      <Section />
+      <Section title={"Top Albums"} endpoint={"top"}/>
+      <Section title={"New Albums"} endpoint={"new"}/>
     </div>
   );
 }
