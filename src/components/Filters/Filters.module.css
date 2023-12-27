@@ -1,0 +1,9 @@
+.tabs {
+    color: white;
+    font-weight: bold;
+    text-transform: none;
+
+}
+.tabs :selection {
+    color: white;
+} 

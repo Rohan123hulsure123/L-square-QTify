@@ -5,20 +5,22 @@
     width: 100%;
 }
 
-.right-button{
+.right_button{
+    position: absolute;
+    cursor: pointer;
+    right: 0;
+}
+
+.left_button{
     cursor: pointer;
 }
 
-.left-button{
-    cursor: pointer;
-}
-
-.slider-navigation{
+.slider_navigation{
     z-index: 999;
     width: 100%;
     top:35%;
     position: absolute;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    /* justify-content: space-between; */
 }

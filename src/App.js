@@ -1,20 +1,36 @@
-import '@fontsource/poppins';
-import './App.css';
-import Navbar from './components/Navbar/Navbar';
-import HeroSection from './components/HeroSection/HeroSection';
+import "@fontsource/poppins";
+import "./App.css";
+import Navbar from "./components/Navbar/Navbar";
 
-import Section from './components/Section/Section';
-
-
+import { StyledEngineProvider } from "@mui/material";
+import { Outlet } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { fetchAlbumsNew, fetchAlbumsTop, fetchSongs } from "./api/api";
 
 function App() {
+  const [data, setData] = useState({});
+  const fetchData = (key, sourceFucntion) => {
+    sourceFucntion().then((data) => {
+      setData((prevState) => {
+        return { ...prevState, [key]: data };
+      });
+    });
+  };
+  useEffect(() => {
+    fetchData("topAlbums", fetchAlbumsTop);
+    fetchData("newAlbums", fetchAlbumsNew);
+    fetchData("songs", fetchSongs);
+  }, []);
+
+  const {topAlbums =[], newAlbums = [], songs = [] } = data;
   return (
-    <div className="App">
-      <Navbar />
-      <HeroSection />
-      <Section title={"Top Albums"} endpoint={"top"}/>
-      <Section title={"New Albums"} endpoint={"new"}/>
-    </div>
+    <>
+      <StyledEngineProvider injectFirst>
+        <Navbar />
+        <Outlet context={{data: {topAlbums, newAlbums, songs}}}/>
+      </StyledEngineProvider>
+    </>
+
   );
 }
 

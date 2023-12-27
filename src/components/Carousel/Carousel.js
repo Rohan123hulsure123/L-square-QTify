@@ -1,87 +1,82 @@
 import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import { Navigation } from "swiper";
 
 import "swiper/css";
 import "swiper/css/navigation";
-import "./Carousel.css";
+import styles from "./Carousel.module.css";
 import Card from "../Card/Card";
 
 function LeftButtom() {
+  const swiper = useSwiper();
+
   return (
-    <div className="left-button">
-      <img src="./left.png" alt="left" />
+    <div
+      id="left-buttton"
+      className={styles.left_button}
+      onClick={() => swiper.slidePrev()}
+    >
+      <img src="./left.svg" alt="left" />
     </div>
   );
 }
 function RightButtom() {
+  const swiper = useSwiper();
   return (
-    <div className="right-button">
-      <img src="./right.png" alt="right" />
+    <div
+      id="right-buttton"
+      className={styles.right_button}
+      onClick={() => swiper.slideNext()}
+    >
+      <img src="./right.svg" alt="right" />
     </div>
   );
 }
 
-export default function Carousel({ albums }) {
+export default function Carousel({ type, data }) {
   return (
-    <div className="carousel">
+    <div className={styles.carousel}>
       <Swiper
-        // initialSlide={3}
         modules={[Navigation]}
         spaceBetween={40}
         slidesPerView={7}
-        navigation={{
-          prevEl: ".left-button",
-          nextEl: ".right-button",
-        }}
+        // navigation={{
+        //   prevEl: "#left_button",
+        //   nextEl: "#right_button",
+        // }}
+        // navigation
         breakpoints={{
-            320: {
-              slidesPerView: 2,
-            },
-            480: {
-              slidesPerView: 3,
-            },
-            768: {
-              slidesPerView: 5,
-            },
-            1024: {
-              slidesPerView: 7,
-            },
-          }}
+          320: {
+            slidesPerView: 2,
+          },
+          480: {
+            slidesPerView: 3,
+          },
+          768: {
+            slidesPerView: 5,
+          },
+          1024: {
+            slidesPerView: 7,
+          },
+        }}
       >
-        {/* <SwiperSlide>1</SwiperSlide>
-        <SwiperSlide>2</SwiperSlide>
-        <SwiperSlide>3</SwiperSlide>
-        <SwiperSlide>4</SwiperSlide>
-        <SwiperSlide>5</SwiperSlide>
-        <SwiperSlide>6</SwiperSlide>
-        <SwiperSlide>7</SwiperSlide>
-        <SwiperSlide>8</SwiperSlide>
-        <SwiperSlide>9</SwiperSlide>
-        <SwiperSlide>10</SwiperSlide>
-        <SwiperSlide>11</SwiperSlide>
-        <SwiperSlide>12</SwiperSlide>
-        <SwiperSlide>13</SwiperSlide> */}
-        {albums?.map((album) => {
-        return (
-          <SwiperSlide key={album.id}>
-            <Card
-              id={album.id}
-              title={album.title}
-              description={album.description}
-              follow_count={album.follows}
-              image={album.image}
-              slug={album.slug}
-              songs={album.songs}
-            />
-          </SwiperSlide>
-        );
-      })}
+        <div className={styles.slider_navigation}>
+          <LeftButtom />
+          <RightButtom />
+        </div>
+        {data?.map((album) => {
+          // const { title, follow_count, image, slug, songs} = album;
+          return (
+            <SwiperSlide key={album.id}>
+              <Card id={album.id} type={type} data={album} />
+            </SwiperSlide>
+          );
+        })}
       </Swiper>
-      <div className="slider-navigation">
+      {/* <div className={styles.slider_navigation}>
         <LeftButtom />
         <RightButtom />
-      </div>
+      </div> */}
     </div>
   );
 }
